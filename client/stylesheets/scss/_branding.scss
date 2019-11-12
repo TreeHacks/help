@@ -24,6 +24,7 @@ $black: #2d2d2d;
 
 $background-color: hsl(339, 77%, 99%);
 $light-gray: #696E76;
+$base-font-size: 16px;
 
 // --------------
 // Colors used for social auth
@@ -50,12 +51,12 @@ $github-gray: #e4e4e4;
 
 // Styling for the fonts
 @mixin font-stack(){
-  font-family: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-weight: 300;
 }
 
 @mixin logo-font(){
-  font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-weight: 700;
 }
 

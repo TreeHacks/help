@@ -1,19 +1,18 @@
 button.push {
   @include font-stack();
-  @include border-radius(2px);
-  @include bold();
   color: white;
   display: block;
   position: relative;
   background: none;
   font-size: 1.1em;
-  padding: .7em 1em;
-  border: none;
-  background: grey;
-  border-bottom: 4px solid grey;
-  border-bottom-color: lighten(grey, 10);
-  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
   transition-duration: .2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &:focus {
     outline: none;
@@ -44,33 +43,27 @@ button.push {
 
   &.primary {
     background: $brand-primary;
-    border-bottom-color: lighten($brand-primary, 10);
   }
 
   &.secondary {
     background: $brand-secondary;
-    border-bottom-color: lighten($brand-secondary, 10);
   }
 
   &.success {
     background: $brand-success;
-    border-bottom-color: lighten($brand-success, 10);
   }
 
   &.danger {
     background: $brand-danger;
-    border-bottom-color: lighten($brand-danger, 10);
   }
 
   &.github {
     color: darken($github-gray, 50);
     background: $github-gray;
-    border-bottom-color: lighten($github-gray, 3);
   }
 
   &.facebook {
     background: $facebook-blue;
-    border-bottom-color: lighten($facebook-blue, 10);
   }
 
 
