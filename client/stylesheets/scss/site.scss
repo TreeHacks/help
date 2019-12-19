@@ -28,7 +28,8 @@ html,
 button,
 input {
   @include font-stack();
-  color: #303030;
+  color: $light-gray;
+  background-color: $background-color;
 }
 
 body,

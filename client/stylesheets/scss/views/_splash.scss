@@ -21,7 +21,6 @@
     .header {
       @include logo-font();
       font-size: 4em;
-      letter-spacing: .2em;
       line-height: 1.33;
     }
 
