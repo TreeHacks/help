@@ -1,8 +1,13 @@
 <template name="banner">
   <div id="banner">
     <div class="content">
+      <a href="https://treehacks.com">
+        <img class="logo-image" src="assets/images/logo.svg" alt="treehacks logo">
+      </a>
       <a href="/">
-        {{constant 'Q_NAME'}}
+        <div class="header">
+          <span class="first-header">{{constant 'Q_NAME_FIRST'}}</span><span class="second-header">{{constant 'Q_NAME_SECOND'}}</span>
+        </div>
       </a>
     </div>
   </div>

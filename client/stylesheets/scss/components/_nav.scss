@@ -3,14 +3,26 @@
   padding: 8px 8px 0;
   width: 100%;
 
-  .dropdown {
+  .item,
+  .ui.icon {
     color: $brand-primary;
+
+    &:hover,
+    &:focus {
+      color: $light-gray !important;
+    }
   }
 
   .floating.notification.label {
     top: -0.5em;
     left: 90%;
     padding: 0.4em;
+  }
+
+  .menu.visible {
+    .item {
+      color: $light-gray !important;
+    }
   }
 }
 

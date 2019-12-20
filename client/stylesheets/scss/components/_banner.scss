@@ -1,11 +1,10 @@
 #banner {
-  margin-bottom: 12px;
-
   .content {
     @include logo-font();
     font-size: 3em;
     text-align: center;
-    padding: 1.4em 0 1.4em;
+    padding-top: 60px;
+    //padding: 1.4em 0 1.4em;
     a {
       color: $brand-primary;
     }
