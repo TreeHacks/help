@@ -25,12 +25,12 @@
         font-size: 20px;
 
         input {
-          transition: .4s;
           padding: 6px 10px;
+          box-shadow: none;
+          transition: box-shadow .2s linear;
 
           &:focus {
-            border-color: $brand-primary;
-            border-width: 2px;
+            box-shadow: 0 0 0 2px $brand-primary;
           }
         }
       }
