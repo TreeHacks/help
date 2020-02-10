@@ -1,5 +1,12 @@
 <template name="login">
   <div id="login" class="ui segment">
+  {{#if error}}
+  <div class="ui small error message">
+    {{error}}
+  </div>
+  {{/if}}
+</div>
+  <!--div id="login" class="ui segment">
     {{#if error}}
       <div class="ui small error message">
         {{error}}
@@ -27,5 +34,5 @@
     <br>
     <button id="login-facebook" class="fluid facebook push button"> Login with Facebook</button>
     {{/if}}
-  </div>
+  </div-->
 </template>

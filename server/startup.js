@@ -183,3 +183,49 @@ function overlay(base, object) {
     }
   }
 }
+
+var ENDPOINT_URL = "https://root.dev.treehacks.com/api"
+
+function getProfileFromJwt(jwt) {
+  const result = HTTP.get(ENDPOINT_URL + "/user_profile", {
+    "headers": { "Authorization": jwt }
+  });
+  if (result.statusCode === 200 && result.data && result.data.id) {
+    return result.data;
+  }
+  return null;
+}
+
+function _treehacksLoginHandler(options) {
+  if (!options.jwt) {
+    return undefined;
+  }
+  const profile = getProfileFromJwt(options.jwt);
+  if (!profile) {
+    return undefined;
+  }
+  var newProfile = {
+    email: profile.email,
+    name: profile.first_name + " " + profile.last_name,
+    first_name: profile.first_name,
+    last_name: profile.last_name
+  };
+  if (profile.groups.indexOf("admin") > -1) {
+    // Admin
+    // TODO: don't use profile
+    newProfile.admin = true;
+  }
+  else if (profile.status !== "admission_confirmed") {
+    // Only admitted applicants can login.
+    return undefined;
+  }
+
+  var options = {
+    "profile": newProfile
+  };
+  var loginResult = Accounts.updateOrCreateUserFromExternalService("treehacks", profile, options)
+  this.setUserId(loginResult.userId);
+  return loginResult;
+};
+
+Accounts.registerLoginHandler(_treehacksLoginHandler);
