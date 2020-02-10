@@ -1,3 +1,5 @@
+var LOGIN_URL = "https://login.dev.treehacks.com";
+
 // -----------------------------
 // Mentor section of Nav
 // -----------------------------
@@ -20,7 +22,10 @@ Template.navAccount.rendered = function(){
 
 Template.navAccount.events({
   'click #logout': function(){
-    Meteor.logout();
+    Meteor.logout(function() {
+      sessionStorage.clearItem("jwt");
+      window.location = LOGIN_URL + "/logout";
+    });
   }
 });
 
