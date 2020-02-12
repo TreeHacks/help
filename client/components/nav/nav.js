@@ -23,7 +23,7 @@ Template.navAccount.rendered = function(){
 Template.navAccount.events({
   'click #logout': function(){
     Meteor.logout(function() {
-      sessionStorage.clearItem("jwt");
+      sessionStorage.removeItem("jwt");
       window.location.href = LOGIN_URL + "/logout?redirect=${window.location.href}";
     });
   }
