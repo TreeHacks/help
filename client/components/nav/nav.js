@@ -24,7 +24,7 @@ Template.navAccount.events({
   'click #logout': function(){
     Meteor.logout(function() {
       sessionStorage.clearItem("jwt");
-      window.location = LOGIN_URL + "/logout";
+      window.location.href = LOGIN_URL + "/logout?redirect=${window.location.href}";
     });
   }
 });
