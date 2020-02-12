@@ -1,16 +1,18 @@
 <template name="leaderboard">
-  <div class="ui yellow segment">
-    <h3 class="ui dividing header">
-      Leaderboard
-    </h3>
-    <div class="ui large relaxed ordered list">
-      {{#each topMentors}}
-        {{> leaderboardUser}}
-      {{/each}}
+  {{#if userIs 'admin'}}
+    <div class="ui yellow segment">
+      <h3 class="ui dividing header">
+        Leaderboard
+      </h3>
+      <div class="ui large relaxed ordered list">
+        {{#each topMentors}}
+          {{> leaderboardUser}}
+        {{/each}}
+      </div>
     </div>
-  </div>
-
+  {{/if}}
 </template>
+
 
 <template name="leaderboardUser">
   <div class="item">
