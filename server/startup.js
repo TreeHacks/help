@@ -215,6 +215,9 @@ function _treehacksLoginHandler(options) {
     // TODO: don't use profile
     newProfile.admin = true;
   }
+  else if (profile.groups.indexOf("mentor") > -1) {
+    newProfile.mentor = true;
+  }
   else if (profile.status !== "admission_confirmed") {
     // Only admitted applicants can login.
     return undefined;
