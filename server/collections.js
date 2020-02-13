@@ -65,11 +65,10 @@ Settings = new Meteor.Collection('settings');
 // Collection Permissions
 // ----------------------------------------
 
-Meteor.users.allow({
-  // Update users, only if Admin
-  update: function(userId, doc){
-    var user = _getUser(userId);
-    return user.profile.admin;
+// Don't allow updating profile
+Meteor.users.deny({
+  update: function(){
+    return true;
   }
 });
 
