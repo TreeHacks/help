@@ -1,5 +1,3 @@
-var LOGIN_URL = "https://login.dev.treehacks.com";
-
 // From https://github.com/youbastard/jquery.getQueryParameters/blob/master/qp.js
 var getQueryParameters = function(str) {
   return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n=n.split("="),this[n[0]]=n[1],this;}.bind({}))[0];
@@ -26,7 +24,7 @@ Template.login.helpers({
 
 
 function login() {
-  window.location.href = LOGIN_URL + "?redirect=" + window.location.href;
+  window.location.href = window["CONSTANTS"]["LOGIN_URL"] + "?redirect=" + window.location.href;
 }
 
 function checkLoginStatus(t) {

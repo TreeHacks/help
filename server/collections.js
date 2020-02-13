@@ -4,6 +4,7 @@
  * Ticket:
  *  {
  *     userId: STRING,
+ *     hackerapi_id: STRING,
  *     name: STRING,
  *     imageUrl: STRING [optional]
  *     topic: STRING,

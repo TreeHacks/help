@@ -33,7 +33,9 @@
       </div>
 
       <strong> Contact: </strong>
-      {{contact}}
+      <a target="_blank" href="{{constant 'ENDPOINT_URL'}}/users/{{hackerapi_id}}/contact">
+        via Slack
+      </a>
     </div>
     <div class="extra content">
       {{#if statusIs "OPEN"}}

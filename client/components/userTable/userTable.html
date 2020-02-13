@@ -103,10 +103,11 @@
             Admin
           </span>
           {{/if}}
-
-          <span class="ui tiny button edit-user">
-            Edit
-          </span>
+          <a target="_blank" href="{{constant 'ENDPOINT_URL'}}/users/{{hackerapi_id}}/contact">
+            <span class="ui tiny button">
+              Contact
+            </span>
+          </a>
         </td>
       </tr>
     {{/each}}

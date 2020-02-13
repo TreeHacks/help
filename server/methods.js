@@ -42,6 +42,7 @@ function createTicket(topic, location, contact) {
     Tickets.insert({
       userId: user._id,
       name: _getUserName(user),
+      hackerapi_id: user.profile.hackerapi_id,
       topic: topic,
       location: location,
       contact: contact,
@@ -51,7 +52,7 @@ function createTicket(topic, location, contact) {
       rating: null
     });
 
-    _log("Ticket Created by " + this.userId);
+    _log("Ticket Created by " + this.userId + ", " + user.profile.hackerapi_id);
   }
 }
 

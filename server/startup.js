@@ -34,7 +34,6 @@ Meteor.startup(function(){
   Accounts.onCreateUser(function(options, user){
     if (options.profile){
       user.profile = options.profile;
-
       if (config.defaultMentor){
         user.profile.mentor = true;
       }
@@ -205,6 +204,7 @@ function _treehacksLoginHandler(options) {
     return undefined;
   }
   var newProfile = {
+    hackerapi_id: profile.id,
     email: profile.email,
     name: profile.first_name + " " + profile.last_name,
     first_name: profile.first_name,
