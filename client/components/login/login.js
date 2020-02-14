@@ -6,6 +6,11 @@ var getQueryParameters = function(str) {
 Template.login.onCreated(function(){
   this.error = new ReactiveVar();
 
+  if (sessionStorage.getItem("logging_out") == "1") {
+    // Don't try to log in while logging out.
+    return;
+  }
+
   var hash = getQueryParameters(window.location.hash.substring(1)); // remove starting # from hash
   if (hash && hash.jwt) {
     sessionStorage.setItem("jwt", hash.jwt);
@@ -22,6 +27,7 @@ Template.login.helpers({
   }
 });
 
+sessionStorage.setItem("logging_out", "0");
 
 function login() {
   window.location.href = window["CONSTANTS"]["LOGIN_URL"] + "?redirect=" + window.location.href;
