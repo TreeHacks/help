@@ -215,10 +215,10 @@ function _treehacksLoginHandler(options) {
   }
   else if (profile.groups.indexOf("mentor") > -1) {
     newProfile.mentor = true;
-    newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Hacker");
+    newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Mentor");
   }
   else if (profile.status === "admission_confirmed") {
-    newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Mentor");
+    newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Hacker");
   }
   else {
     // Only admitted applicants can login.
