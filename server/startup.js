@@ -206,13 +206,13 @@ function _treehacksLoginHandler(options) {
   var newProfile = {
     hackerapi_id: profile.id,
     email: profile.email,
+    phone: profile.phone,
     name: profile.first_name + " " + profile.last_name,
     first_name: profile.first_name,
     last_name: profile.last_name
   };
   if (profile.groups.indexOf("admin") > -1) {
     // Admin
-    // TODO: don't use profile
     newProfile.admin = true;
   }
   else if (profile.groups.indexOf("mentor") > -1) {
