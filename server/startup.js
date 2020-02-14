@@ -18,15 +18,15 @@ Meteor.startup(function(){
   overlay(config, envConfigs);
 
   // Create the admin
-  createAdmin(config.admin.username, config.admin.password);
+  // createAdmin(config.admin.username, config.admin.password);
 
   // Clear Service integrations
   ServiceConfiguration.configurations.remove({});
 
   // Add Service Integrations
-  addServiceIntegration('github', config.github);
-  addFacebookIntegration(config.facebook);
-  addServiceIntegration('google', config.google);
+  // addServiceIntegration('github', config.github);
+  // addFacebookIntegration(config.facebook);
+  // addServiceIntegration('google', config.google);
 
   // Add Base Settings
   setBasicSettings(config);
