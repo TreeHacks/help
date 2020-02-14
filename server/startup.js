@@ -211,7 +211,7 @@ function _treehacksLoginHandler(options) {
   if (profile.groups.indexOf("admin") > -1) {
     // Admin
     newProfile.admin = true;
-    (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Admin");
+    newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Admin");
   }
   else if (profile.groups.indexOf("mentor") > -1) {
     newProfile.mentor = true;
