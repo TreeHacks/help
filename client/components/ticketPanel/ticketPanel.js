@@ -17,8 +17,8 @@ Template.ticketPanel.helpers({
   },
   greeting: function(){
     // Return the first name
-    if (Meteor.user().profile.first_name){
-      return "Hey, " + Meteor.user().profile.first_name + "!";
+    if (Meteor.user().profile.name){
+      return "Hey, " + Meteor.user().profile.name.split(" ")[0] + "!";
     }
 
     if (Meteor.user().services.github){

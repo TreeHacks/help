@@ -29,8 +29,8 @@ Template.navAccount.events({
 
 Template.navAccount.helpers({
   profile: function(){
-    if (Meteor.user().profile.first_name){
-      return Meteor.user().profile.first_name;
+    if (Meteor.user().profile.name){
+      return Meteor.user().profile.name.split(" ")[0];
     }
     return "Profile";
   }

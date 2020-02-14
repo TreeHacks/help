@@ -206,19 +206,21 @@ function _treehacksLoginHandler(options) {
   var newProfile = {
     hackerapi_id: profile.id,
     email: profile.email,
-    phone: profile.phone,
-    name: profile.first_name + " " + profile.last_name,
-    first_name: profile.first_name,
-    last_name: profile.last_name
+    phone: profile.phone
   };
   if (profile.groups.indexOf("admin") > -1) {
     // Admin
     newProfile.admin = true;
+    (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Admin");
   }
   else if (profile.groups.indexOf("mentor") > -1) {
     newProfile.mentor = true;
+    newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Hacker");
   }
-  else if (profile.status !== "admission_confirmed") {
+  else if (profile.status === "admission_confirmed") {
+    newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Mentor");
+  }
+  else {
     // Only admitted applicants can login.
     return undefined;
   }
