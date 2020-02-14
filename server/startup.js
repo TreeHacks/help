@@ -183,7 +183,7 @@ function overlay(base, object) {
   }
 }
 
-var ENDPOINT_URL = "https://root.dev.treehacks.com/api"
+var ENDPOINT_URL = "https://root.treehacks.com/api"
 
 function getProfileFromJwt(jwt) {
   const result = HTTP.get(ENDPOINT_URL + "/user_profile", {

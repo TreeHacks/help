@@ -22,6 +22,5 @@
     "queueEnabled": true,
     "expirationDelay": 1800000
   },
-  "defaultMentor": false,
-  "LOGIN_URL": "https://login.dev.treehacks.com"
+  "defaultMentor": false
 }
