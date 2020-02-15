@@ -217,13 +217,13 @@ function _treehacksLoginHandler(options) {
     newProfile.mentor = true;
     newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Mentor");
   }
-  else if (profile.status === "admission_confirmed") {
+  else {//  if (profile.status === "admission_confirmed") {
     newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Hacker");
   }
-  else {
-    // Only admitted applicants can login.
-    return undefined;
-  }
+  // else {
+  //   // Only admitted applicants can login.
+  //   return undefined;
+  // }
 
   var options = {
     "profile": newProfile
