@@ -208,12 +208,13 @@ function _treehacksLoginHandler(options) {
     email: profile.email,
     phone: profile.phone
   };
-  if (profile.groups.indexOf("admin") > -1) {
+  let groups = profile.groups || [];
+  if (groups.indexOf("admin") > -1) {
     // Admin
     newProfile.admin = true;
     newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Admin");
   }
-  else if (profile.groups.indexOf("mentor") > -1) {
+  else if (groups.indexOf("mentor") > -1) {
     newProfile.mentor = true;
     newProfile.name = (profile.first_name || "TreeHacks") + " " + (profile.last_name || "Mentor");
   }
