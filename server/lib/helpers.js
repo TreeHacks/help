@@ -11,7 +11,7 @@ _getUserName = function(user){
     return user.profile.name;
   }
 
-  if (user.services.github.username){
+  if (user.services && user.services.github && user.services.github.username){
     return user.services.github.username;
   }
   return "Anonymous";
