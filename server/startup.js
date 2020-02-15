@@ -208,7 +208,7 @@ function _treehacksLoginHandler(options) {
     email: profile.email,
     phone: profile.phone
   };
-  let groups = profile.groups || [];
+  var groups = profile.groups || [];
   if (groups.indexOf("admin") > -1) {
     // Admin
     newProfile.admin = true;
