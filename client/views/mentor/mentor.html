@@ -1,24 +1,21 @@
 <template name="mentor">
   <div id="mentor">
+    <div id="mentor-notice">
+      Note: This is a general list of tickets. You do not need to claim any
+      tickets that do not relate to your skills.
+    </div>
     <div class="ui three column stackable centered page grid">
-      <div class="seven wide column">
-        {{> tickets }}
-      </div>
+      <div class="seven wide column">{{> tickets }}</div>
       <div class="five wide column">
         <div class="one column row">
-          <div class="column">
-          {{> leaderboard }}
-          </div>
+          <div class="column">{{> leaderboard }}</div>
         </div>
-        <br>
+        <br />
         <div class="onw column row">
-          <div class="column">
-          {{> skillsList }}
-          </div>
+          <div class="column">{{> skillsList }}</div>
         </div>
       </div>
     </div>
-    <br>
+    <br />
   </div>
 </template>
-
